@@ -2,6 +2,22 @@ Docker Compose is a tool used to define and manage multi-container applications.
 
 - Docker Compose Syntax: Docker Compose uses a YAML configuration file to define the services, networks, and volumes of your application. The YAML file typically starts with a version declaration, followed by sections for services, volumes, and networks. Each section contains the configuration details for the corresponding resource. Here is an example of a basic Docker Compose YAML file:
 
+
+
+
+version: "3.8"
+services:
+  api:
+    build: ./api
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./api:/app
+      - ./app/node_modules 
+
+
+--------------------------------------------------------------------------
   ```yaml
   version: "3.7"
   services:
